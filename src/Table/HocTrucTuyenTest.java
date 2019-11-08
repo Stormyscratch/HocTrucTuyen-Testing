@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class TableTest {
+public class HocTrucTuyenTest {
 	WebDriver driver;
 	String baseURL = "https://hoctructuyen.vanlanguni.edu.vn";
 	@BeforeTest
