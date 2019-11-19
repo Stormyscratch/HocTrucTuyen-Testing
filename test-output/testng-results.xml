@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="1" total="2" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14087" started-at="2019-11-08T18:53:46 ICT" finished-at="2019-11-08T18:54:00 ICT">
+  <suite name="Default suite" duration-ms="2872" started-at="2019-11-19T15:21:31 ICT" finished-at="2019-11-19T15:21:34 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14087" started-at="2019-11-08T18:53:46 ICT" finished-at="2019-11-08T18:54:00 ICT">
-      <class name="Table.TableTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:Table.TableTest@520a3426]" name="init" is-config="true" duration-ms="7969" started-at="2019-11-08T18:53:46 ICT" finished-at="2019-11-08T18:53:54 ICT">
+    <test name="Default test" duration-ms="2872" started-at="2019-11-19T15:21:31 ICT" finished-at="2019-11-19T15:21:34 ICT">
+      <class name="Table.HocTrucTuyenTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:Table.HocTrucTuyenTest@6536e911]" name="init" is-config="true" duration-ms="8806" started-at="2019-11-19T15:21:22 ICT" finished-at="2019-11-19T15:21:31 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="FAIL" signature="guestLogin()[pri:0, instance:Table.TableTest@520a3426]" name="guestLogin" duration-ms="2566" started-at="2019-11-08T18:53:54 ICT" finished-at="2019-11-08T18:53:56 ICT">
-          <exception class="java.lang.AssertionError">
+        <test-method status="PASS" signature="loginClick()[pri:0, instance:Table.HocTrucTuyenTest@6536e911]" name="loginClick" is-config="true" duration-ms="857" started-at="2019-11-19T15:21:31 ICT" finished-at="2019-11-19T15:21:32 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginClick -->
+        <test-method status="PASS" signature="guestLogin()[pri:0, instance:Table.HocTrucTuyenTest@6536e911]" name="guestLogin" duration-ms="1972" started-at="2019-11-19T15:21:32 ICT" finished-at="2019-11-19T15:21:34 ICT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guestLogin -->
+        <test-method status="FAIL" signature="login(java.lang.String, java.lang.String)[pri:0, instance:Table.HocTrucTuyenTest@6536e911]" name="login" duration-ms="0" started-at="2019-11-19T15:21:34 ICT" finished-at="2019-11-19T15:21:34 ICT">
+          <exception class="org.testng.TestNGException">
             <message>
-              <![CDATA[did not expect to find [true] but found [false]]]>
+              <![CDATA[
+Cannot inject @Test annotated Method [login] with [class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: did not expect to find [true] but found [false]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertTrue(Assert.java:43)
-at org.testng.Assert.assertTrue(Assert.java:53)
-at Table.TableTest.guestLogin(TableTest.java:52)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+              <![CDATA[org.testng.TestNGException: 
+Cannot inject @Test annotated Method [login] with [class java.lang.String, class java.lang.String].
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:458)
+at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:372)
+at org.testng.internal.Parameters.createParameters(Parameters.java:729)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:895)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:762)
+at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:60)
+at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:39)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:771)
 at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
@@ -53,15 +59,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Table.TableTest@520a3426]" name="driverQuit" is-config="true" duration-ms="3512" started-at="2019-11-08T18:53:56 ICT" finished-at="2019-11-08T18:54:00 ICT">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Table.HocTrucTuyenTest@6536e911]" name="driverQuit" is-config="true" duration-ms="4135" started-at="2019-11-19T15:21:34 ICT" finished-at="2019-11-19T15:21:38 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- Table.TableTest -->
+      </class> <!-- Table.HocTrucTuyenTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
