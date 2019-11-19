@@ -36,7 +36,7 @@ public class HocTrucTuyenTest {
 	  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
 	  
 	  String actualResult = driver.findElement(By.xpath("//a[@title='View profile']")).getText();
-	  String expectedResult = "T177225 - NGUYỄN VĨNH TR�? - K23T01";
+	  String expectedResult = "T177225 - NGUYỄN VĨNH TR�? - K23T01";
 	  Assert.assertEquals(actualResult, expectedResult);
   }
 	
@@ -52,18 +52,7 @@ public class HocTrucTuyenTest {
 		assertTrue(actual.contains("You are currently using guest access"));
 	}
 	
-	@Test
-	public void invalidLogin() {
-		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-		
-		driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
-		
-		String actual =  driver.findElement(By.xpath("//span[@class='error']")).getText();
-		
-		String expected = "Invalid login, please try again";
-		
-		Assert.assertEquals(actual, expected);
-	}
+	
 	@AfterTest
 	public void driverQuit() {
 		driver.quit();
