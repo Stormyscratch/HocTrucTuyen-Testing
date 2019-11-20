@@ -1,5 +1,7 @@
 package Package;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import static org.testng.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
@@ -14,6 +16,8 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
+
 public class HocTrucTuyenTest {	
 	WebDriver driver;
 	String baseURL = "https://hoctructuyen.vanlanguni.edu.vn";
@@ -24,17 +28,13 @@ public class HocTrucTuyenTest {
   driver.get(baseURL);
   }
 	
-	@BeforeTest
-	public void loginClick(){
-	//Clicking the login button
-	  driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-	}
+
 	
-	@Test
-  public void login(String user, String password) {
-		user = "t177225";
-		password = "t177225";
-		
+	@Test(priority = 2)
+  public void login() {
+		String user = "t177225";
+		String password = "t177225";
+		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
 	  //Insert Username and Password
 	  driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
 	  
@@ -43,25 +43,58 @@ public class HocTrucTuyenTest {
 	  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
 	  
 	  String actualResult = driver.findElement(By.xpath("//a[@title='View profile']")).getText();
-	  String expectedResult = "T177225 - NGUYỄN VĨNH TR�? - K23T01";
-	  Assert.assertEquals(actualResult, expectedResult);
+	  String expectedResult = "T177225 - NGUYỄN VĨNH TRÍ - K23T01";
+	  AssertJUnit.assertEquals(actualResult, expectedResult);
+	  
+	  driver.findElement(By.xpath("//a[text()='Log out']")).click();
   }
 	
-	@Test
+	@Test(priority = 1)
 	public void guestLogin() {
-//		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
+		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
 		//Login as guest
 		driver.findElement(By.xpath("//input[@value='Log in as a guest']")).click();
 		//getting actual result
 		String actual = driver.findElement(By.xpath("//div[@class='logininfo']")).getText();
 		//checking if it's true or not
 		
-		assertTrue(actual.contains("You are currently using guest access"));
+		AssertJUnit.assertTrue(actual.contains("You are currently using guest access"));
 	}
-//	@Test
-//	public void invalidUser() {
-//		
-//	}
+	@Test (priority = 3)
+	public void invalidUser() {
+		String user = "t177813";
+		String password = "t177225";
+		
+		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
+		
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
+		  
+		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+		  
+		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
+		  
+		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
+		  String expectedResult = "Invalid login, please try again";
+		  
+		  AssertJUnit.assertEquals(actualResult, expectedResult);
+	}
+	
+	@Test(priority = 4)
+	public void invalidPassword() {
+		String user = "t177225";
+		String password = "ABCXYZ";
+		
+		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
+		  
+		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+		  
+		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
+		  
+		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
+		  String expectedResult = "Invalid login, please try again";
+		  
+		  AssertJUnit.assertEquals(actualResult, expectedResult);
+	}
 	
 	@AfterSuite
 	public void driverQuit() {
