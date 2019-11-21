@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7965" started-at="2019-11-20T18:59:13 ICT" finished-at="2019-11-20T18:59:21 ICT">
+  <suite name="Default suite" duration-ms="8408" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:52 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7965" started-at="2019-11-20T18:59:13 ICT" finished-at="2019-11-20T18:59:21 ICT">
-      <class name="Package.HocTrucTuyenTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:Package.HocTrucTuyenTest@6b09bb57]" name="init" is-config="true" duration-ms="7551" started-at="2019-11-20T18:59:06 ICT" finished-at="2019-11-20T18:59:13 ICT">
+    <test name="Default test" duration-ms="8408" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:52 ICT">
+      <class name="Package.UploadTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:Package.UploadTest@18eed359]" name="init" is-config="true" duration-ms="9413" started-at="2019-11-21T16:09:34 ICT" finished-at="2019-11-21T16:09:44 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="guestLogin()[pri:1, instance:Package.HocTrucTuyenTest@6b09bb57]" name="guestLogin" duration-ms="2742" started-at="2019-11-20T18:59:13 ICT" finished-at="2019-11-20T18:59:16 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="login()[pri:2, instance:Package.HocTrucTuyenTest@6b09bb57]" name="login" duration-ms="2766" started-at="2019-11-20T18:59:16 ICT" finished-at="2019-11-20T18:59:19 ICT">
+        <test-method status="PASS" signature="login()[pri:0, instance:Package.UploadTest@18eed359]" name="login" is-config="true" duration-ms="3042" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:47 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="invalidUser()[pri:3, instance:Package.HocTrucTuyenTest@6b09bb57]" name="invalidUser" duration-ms="1543" started-at="2019-11-20T18:59:19 ICT" finished-at="2019-11-20T18:59:20 ICT">
+        <test-method status="PASS" signature="uploading()[pri:0, instance:Package.UploadTest@18eed359]" name="uploading" duration-ms="5331" started-at="2019-11-21T16:09:47 ICT" finished-at="2019-11-21T16:09:52 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidUser -->
-        <test-method status="PASS" signature="invalidPassword()[pri:4, instance:Package.HocTrucTuyenTest@6b09bb57]" name="invalidPassword" duration-ms="880" started-at="2019-11-20T18:59:20 ICT" finished-at="2019-11-20T18:59:21 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidPassword -->
-        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Package.HocTrucTuyenTest@6b09bb57]" name="driverQuit" is-config="true" duration-ms="4906" started-at="2019-11-20T18:59:21 ICT" finished-at="2019-11-20T18:59:26 ICT">
+        </test-method> <!-- uploading -->
+        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Package.UploadTest@18eed359]" name="driverQuit" is-config="true" duration-ms="4383" started-at="2019-11-21T16:09:52 ICT" finished-at="2019-11-21T16:09:57 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- Package.HocTrucTuyenTest -->
+      </class> <!-- Package.UploadTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

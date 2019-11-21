@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Package.HocTrucTuyenTest">
+      <class name="Package.UploadTest">
         <methods>
-          <include name="init"/>
+          <include name="login"/>
           <include name="driverQuit"/>
-          <include name="invalidPassword"/>
+          <include name="uploading"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- Package.HocTrucTuyenTest -->
+      </class> <!-- Package.UploadTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,24 +1,18 @@
 package Package;
 
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
-import static org.testng.Assert.assertTrue;
-
-import java.util.concurrent.TimeUnit;
-
+import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 
 
-public class HocTrucTuyenTest {	
+
+
+public class LoginTest {	
 	WebDriver driver;
 	String baseURL = "https://hoctructuyen.vanlanguni.edu.vn";
 	@BeforeSuite
@@ -44,7 +38,7 @@ public class HocTrucTuyenTest {
 	  
 	  String actualResult = driver.findElement(By.xpath("//a[@title='View profile']")).getText();
 	  String expectedResult = "T177225 - NGUYỄN VĨNH TRÍ - K23T01";
-	  AssertJUnit.assertEquals(actualResult, expectedResult);
+	  Assert.assertEquals(actualResult, expectedResult);
 	  
 	  driver.findElement(By.xpath("//a[text()='Log out']")).click();
   }
@@ -58,7 +52,7 @@ public class HocTrucTuyenTest {
 		String actual = driver.findElement(By.xpath("//div[@class='logininfo']")).getText();
 		//checking if it's true or not
 		
-		AssertJUnit.assertTrue(actual.contains("You are currently using guest access"));
+		Assert.assertTrue(actual.contains("You are currently using guest access"));
 	}
 	@Test (priority = 3)
 	public void invalidUser() {
@@ -76,7 +70,7 @@ public class HocTrucTuyenTest {
 		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
 		  String expectedResult = "Invalid login, please try again";
 		  
-		  AssertJUnit.assertEquals(actualResult, expectedResult);
+		  Assert.assertEquals(actualResult, expectedResult);
 	}
 	
 	@Test(priority = 4)
@@ -93,7 +87,7 @@ public class HocTrucTuyenTest {
 		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
 		  String expectedResult = "Invalid login, please try again";
 		  
-		  AssertJUnit.assertEquals(actualResult, expectedResult);
+		  Assert.assertEquals(actualResult, expectedResult);
 	}
 	
 	@AfterSuite
