@@ -23,7 +23,7 @@ import org.testng.annotations.BeforeSuite;
 
 
 public class DownloadTest {
-	public static String downloadPath = "D:";
+	public static String downloadPath = "C:\\Users\\Toshiba\\Downloads";
 	WebDriver driver;
 	String baseURL = "https://hoctructuyen.vanlanguni.edu.vn";
 	@BeforeSuite
@@ -58,20 +58,19 @@ public class DownloadTest {
 	  action.perform();
 	  Thread.sleep(3000);
 	  driver.findElement(By.xpath("//a[@title='KTTD-K23T-HK1-1920']")).click();;
-	  driver.findElement(By.xpath("/html/body/div[3]/div/ul/li[3]/div/ul/li[1]/a")).click();;
-//	  driver.findElement(By.xpath("//img[@role='presentation']")).click();;
-//	  H OW TF AM I SUPPO SE TO GET THA T XPATH
+	  driver.findElement(By.xpath("//span[text()='Slides']")).click();
+	  
 //	  Download file
-	  driver.findElement(By.xpath(""
-	  		+ "html.yui3-js-enabled.uk-notouch.js.textshadow.cssanimations.csstransitions body#page-course-view-topics.format-topics.path-course.path-course-view.gecko.dir-ltr.lang-en.yui-skin-sam.yui3-skin-sam.hoctructuyen-vanlanguni-edu-vn.pagelayout-course.course-1256.context-109982.category-57.theme_uikit.moodle26plus.layout1.has-region-side-pre.used-region-side-pre.has-region-side-post.used-region-side-post.has-region-footer-left.empty-region-footer-left.has-region-footer-middle.empty-region-footer-middle.has-region-footer-right.empty-region-footer-right.jsenabled div#page div#page-content div.uk-grid div#region-bs-main-and-pre.uk-width-1-1.uk-width-medium-1-1.uk-width-large-3-4.uk-width-xlarge-8-10.uk-margin-bottom div#pre-and-content.uk-grid div#region-main-uikit.uk-width-1-1.uk-width-medium-7-10.uk-width-large-7-10.uk-width-xlarge-3-4 section#region-main.uk-margin-bottom div#main-content-box div div.course-content ul.topics li#section-0.section.main.clearfix div.content ul.section.img-text li#module-39205.activity.folder.modtype_folder div div.mod-indent-outer div")
-			  ).click();;
-	  driver.findElement(By.xpath("//input[@value='Download folder'")).click();
-	  Thread.sleep(50000);
+//	  driver.findElement(By.xpath("//input[@value='Download folder'")).click();
+	  driver.findElement(By.xpath(
+			  "/html/body/div[4]/div/div/div/div/div/section/div[2]/div/div[2]/div/form/div/input[1]")).click();
+	  Thread.sleep(10000);
 	  
 //	  Compare to latest file
+	  String expectedResult = "Slides-20191128";
 	  File getLatestFile = getLatestFilefromDir(downloadPath);
-	     String fileName = getLatestFile.getName();
-	     Assert.assertTrue(fileName.equals("Slides-20191127.zip"),
+	  String fileName = getLatestFile.getName();
+	  Assert.assertTrue(fileName.equals(expectedResult),
 	    		 "Downloaded file name is not matching with expected file name");
 	  
   }

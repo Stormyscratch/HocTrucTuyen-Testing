@@ -2,46 +2,26 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-11-28T11:25:25 ICT" name="Default suite" finished-at="2019-11-28T11:25:43 ICT" duration-ms="17875">
+  <suite started-at="2019-11-28T14:22:48 ICT" name="Default suite" finished-at="2019-11-28T14:23:25 ICT" duration-ms="37227">
     <groups>
     </groups>
-    <test started-at="2019-11-28T11:25:25 ICT" name="Default test" finished-at="2019-11-28T11:25:43 ICT" duration-ms="17875">
+    <test started-at="2019-11-28T14:22:48 ICT" name="Default test" finished-at="2019-11-28T14:23:25 ICT" duration-ms="37227">
       <class name="Package.DownloadTest">
-        <test-method is-config="true" signature="init()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T11:25:02 ICT" name="init" finished-at="2019-11-28T11:25:25 ICT" duration-ms="23037" status="PASS">
+        <test-method is-config="true" signature="init()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T14:22:30 ICT" name="init" finished-at="2019-11-28T14:22:48 ICT" duration-ms="17893" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method signature="downloadTest()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T11:25:25 ICT" name="downloadTest" finished-at="2019-11-28T11:25:39 ICT" duration-ms="14283" status="FAIL">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
+        <test-method signature="downloadTest()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T14:22:48 ICT" name="downloadTest" finished-at="2019-11-28T14:23:21 ICT" duration-ms="33547" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Element <a href="https://hoctructuyen.vanlanguni.edu.vn/course/view.php?id=1256"> could not be scrolled into view
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'SILVERWINGS', ip: '10.7.102.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191030021342, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 13056, moz:profile: C:\Users\Toshiba\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 723ba715-c758-4c1b-a951-8daa0ffc8846]]>
+              <![CDATA[Downloaded file name is not matching with expected file name did not expect to find [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: Element <a href="https://hoctructuyen.vanlanguni.edu.vn/course/view.php?id=1256"> could not be scrolled into view
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'SILVERWINGS', ip: '10.7.102.12', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '12.0.2'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191030021342, moz:geckodriverVersion: 0.26.0, moz:headless: false, moz:processID: 13056, moz:profile: C:\Users\Toshiba\AppData\Lo..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 723ba715-c758-4c1b-a951-8daa0ffc8846
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at Package.DownloadTest.downloadTest(DownloadTest.java:60)
+              <![CDATA[java.lang.AssertionError: Downloaded file name is not matching with expected file name did not expect to find [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at Package.DownloadTest.downloadTest(DownloadTest.java:73)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,11 +52,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- downloadTest -->
-        <test-method is-config="true" signature="driverQuite()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T11:25:39 ICT" name="driverQuite" finished-at="2019-11-28T11:25:43 ICT" duration-ms="3483" status="PASS">
+        <test-method is-config="true" signature="driverQuite()[pri:0, instance:Package.DownloadTest@a4102b8]" started-at="2019-11-28T14:23:21 ICT" name="driverQuite" finished-at="2019-11-28T14:23:25 ICT" duration-ms="3570" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuite -->
