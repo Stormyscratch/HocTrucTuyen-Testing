@@ -6,12 +6,12 @@ import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 //import System;
@@ -51,7 +51,13 @@ public class DownloadTest {
 	  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
 	  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
 	  //navigate to download page sequence
-	  driver.findElement(By.xpath("//a[@href='//*[@id=\"yui_3_17_2_1_1574849554625_72\"]'")).click();;
+	  Thread.sleep(5000);
+	  WebElement element = driver.findElement(By.xpath("//span[text()='My Courses']"));
+	  Actions action = new Actions(driver);
+	  action.moveToElement(element);
+	  action.perform();
+	  Thread.sleep(3000);
+	  driver.findElement(By.xpath("//a[@title='KTTD-K23T-HK1-1920']")).click();;
 	  driver.findElement(By.xpath("/html/body/div[3]/div/ul/li[3]/div/ul/li[1]/a")).click();;
 //	  driver.findElement(By.xpath("//img[@role='presentation']")).click();;
 //	  H OW TF AM I SUPPO SE TO GET THA T XPATH
