@@ -4,6 +4,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import factory.base;
+import factory.serviceFactory;
 import pageFactory.loginPage;
 
 import org.testng.Assert;
@@ -11,10 +12,21 @@ import org.openqa.selenium.By;
 
 public class LoginTest extends base {
 	
-	loginPage objLogin;
+	public final String FILEPATH = "E:\\testDDT\\FptVN.xlsx";
+	public final String SHEET = "LoginTest";
 	
-	@Test(priority = 2)
+	loginPage objLogin;
+	serviceFactory objService;
+	
+	//URL
+	
+	public String username;
+	public String password;
+	
+	@Test(priority = 1)
   public void login() {
+		objLogin = new loginPage(driver);
+		
 		String user = "t177225";
 		String password = "t177225";
 		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
@@ -32,55 +44,52 @@ public class LoginTest extends base {
 	  driver.findElement(By.xpath("//a[text()='Log out']")).click();
   }
 	
-	@Test(priority = 1)
-	public void guestLogin() {
-		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-		//Login as guest
-		driver.findElement(By.xpath("//input[@value='Log in as a guest']")).click();
-		//getting actual result
-		String actual = driver.findElement(By.xpath("//div[@class='logininfo']")).getText();
-		//checking if it's true or not
-		
-		Assert.assertTrue(actual.contains("You are currently using guest access"));
-	}
-	@Test (priority = 3)
-	public void invalidUser() {
-		String user = "t177813";
-		String password = "t177225";
-		
-		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-		
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
-		  
-		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-		  
-		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
-		  
-		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
-		  String expectedResult = "Invalid login, please try again";
-		  
-		  Assert.assertEquals(actualResult, expectedResult);
-	}
+//	@Test(priority = 1)
+//	public void guestLogin() {
+//		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
+//		//Login as guest
+//		driver.findElement(By.xpath("//input[@value='Log in as a guest']")).click();
+//		//getting actual result
+//		String actual = driver.findElement(By.xpath("//div[@class='logininfo']")).getText();
+//		//checking if it's true or not
+//		
+//		Assert.assertTrue(actual.contains("You are currently using guest access"));
+//	}
+//	@Test (priority = 3)
+//	public void invalidUser() {
+//		String user = "t177813";
+//		String password = "t177225";
+//		
+//		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
+//		
+//		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
+//		  
+//		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+//		  
+//		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
+//		  
+//		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
+//		  String expectedResult = "Invalid login, please try again";
+//		  
+//		  Assert.assertEquals(actualResult, expectedResult);
+//	}
 	
-	@Test(priority = 4)
-	public void invalidPassword() {
-		String user = "t177225";
-		String password = "ABCXYZ";
-		
-		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
-		  
-		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-		  
-		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
-		  
-		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
-		  String expectedResult = "Invalid login, please try again";
-		  
-		  Assert.assertEquals(actualResult, expectedResult);
-	}
+//	@Test(priority = 4)
+//	public void invalidPassword() {
+//		String user = "t177225";
+//		String password = "ABCXYZ";
+//		
+//		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
+//		  
+//		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
+//		  
+//		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
+//		  
+//		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
+//		  String expectedResult = "Invalid login, please try again";
+//		  
+//		  Assert.assertEquals(actualResult, expectedResult);
+//	}
+//	
 	
-	@AfterSuite
-	public void driverQuit() {
-		driver.quit();
-	}
 }
