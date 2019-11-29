@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19085" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:44 ICT">
+  <suite name="Default suite" duration-ms="31680" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:54 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19085" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:44 ICT">
+    <test name="Default test" duration-ms="31680" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:54 ICT">
       <class name="test.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:test.LoginTest@627551fb]" name="init" is-config="true" duration-ms="8843" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:34 ICT">
+        <test-method status="PASS" signature="init()[pri:0, instance:test.LoginTest@627551fb]" name="init" is-config="true" duration-ms="7703" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:30 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="login()[pri:1, instance:test.LoginTest@627551fb]" name="login" duration-ms="6448" started-at="2019-11-29T19:30:34 ICT" finished-at="2019-11-29T19:30:41 ICT">
+        <test-method status="PASS" signature="failedLogin()[pri:3, instance:test.LoginTest@627551fb]" name="failedLogin" duration-ms="20799" started-at="2019-11-29T21:18:30 ICT" finished-at="2019-11-29T21:18:51 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:test.LoginTest@627551fb]" name="quit" is-config="true" duration-ms="3752" started-at="2019-11-29T19:30:41 ICT" finished-at="2019-11-29T19:30:44 ICT">
+        </test-method> <!-- failedLogin -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.LoginTest@627551fb]" name="quit" is-config="true" duration-ms="3125" started-at="2019-11-29T21:18:51 ICT" finished-at="2019-11-29T21:18:54 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->

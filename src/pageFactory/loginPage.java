@@ -23,6 +23,8 @@ public class loginPage {
 	WebElement logoutBtn;
 	@FindBy(xpath = "//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")
 	WebElement loginLink;
+	@FindBy(xpath = "//input[@value='Log in as a guest']")
+	WebElement loginGuestBtn;
 	
 	//Text Element
 	@FindBy(xpath = "//div[@class='logininfo']")
@@ -42,11 +44,14 @@ public class loginPage {
 	public WebElement getLogoutBtn() {
 		return this.logoutBtn;
 	}
-	public WebElement getProfileText() {
-		return this.profile;
+	public WebElement getLoginGuestBtn() {
+		return this.loginGuestBtn;
 	}
-	public WebElement getLoginStatus() {
-		return this.loginStatus;
+	public String getProfileText() {
+		return this.profile.getText();
+	}
+	public String getLoginStatus() {
+		return this.loginStatus.getText();
 	}
 	public String getLoginFailedMsg() {
 		return this.loginfailedMsg.getText();
@@ -61,6 +66,9 @@ public class loginPage {
 	}
 	public void loginLinkClick() {
 		this.loginLink.click();
+	}
+	public void loginGuestClick() {
+		this.loginGuestBtn.click();
 	}
 	
 	//Set value

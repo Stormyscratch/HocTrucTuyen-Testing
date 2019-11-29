@@ -27,7 +27,7 @@ public class LoginTest extends base {
 	public final int COL = 6;
   	public final int USERNAME_COL =3;
 	public final int PASSWORD_COL =4;
-	public final int EXPECTED_COL = 6;
+	public final int EXPECTED_COL = 5;
 	public final int SUCCESS_DATA_ROW=2;
 	
 	//POM related
@@ -42,7 +42,7 @@ public class LoginTest extends base {
 	public String username;
 	public String password;
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
   public void login() throws Exception {
 		//POM applied
 		objLogin = new loginPage(driver);
@@ -61,62 +61,55 @@ public class LoginTest extends base {
 		
 		objLogin.login(username, password);
 		
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		Thread.sleep(3000);
+		Assert.assertEquals(objLogin.getLoginStatus(), ExcelUtils.getCellData(SUCCESS_DATA_ROW, EXPECTED_COL));
 		
-		if(driver.getCurrentUrl().equals(homeURL)) {
-			Assert.assertEquals(objLogin.getProfileText(), ExcelUtils.getCellData(SUCCESS_DATA_ROW, EXPECTED_COL));
-			objLogin.logoutClick();
-		}
+		objLogin.logoutClick();
 		
   }
 	
-//	@Test(priority = 1)
-//	public void guestLogin() {
-//		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-//		//Login as guest
-//		driver.findElement(By.xpath("//input[@value='Log in as a guest']")).click();
-//		//getting actual result
-//		String actual = driver.findElement(By.xpath("//div[@class='logininfo']")).getText();
-//		//checking if it's true or not
-//		
-//		Assert.assertTrue(actual.contains("You are currently using guest access"));
-//	}
-//	@Test (priority = 3)
-//	public void invalidUser() {
-//		String user = "t177813";
-//		String password = "t177225";
-//		
-//		driver.findElement(By.xpath("//a[@href='https://hoctructuyen.vanlanguni.edu.vn/login/index.php']")).click();
-//		
-//		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
-//		  
-//		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-//		  
-//		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
-//		  
-//		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
-//		  String expectedResult = "Invalid login, please try again";
-//		  
-//		  Assert.assertEquals(actualResult, expectedResult);
-//	}
+	@Test(priority = 1)
+public void guestLogin() throws Exception {
+		objLogin = new loginPage(driver);
+		objService = new serviceFactory(driver);
+				
+		objService.waitForElementToClickable(objLogin.getLoginLink());
+		objLogin.loginLinkClick();
+		
+		objService.waitForElementToClickable(objLogin.getLoginGuestBtn());
+		objLogin.loginGuestClick();
+		//checking if it's true or not
+		
+		Assert.assertTrue(objLogin.getProfileText().contains("You are currently using guest access"));
+	}	
 	
-//	@Test(priority = 4)
-//	public void invalidPassword() {
-//		String user = "t177225";
-//		String password = "ABCXYZ";
-//		
-//		driver.findElement(By.xpath("//input[@id='username']")).sendKeys(user);
-//		  
-//		  driver.findElement(By.xpath("//input[@id='password']")).sendKeys(password);
-//		  
-//		  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
-//		  
-//		  String actualResult = driver.findElement(By.xpath("//span[@class='error']")).getText();
-//		  String expectedResult = "Invalid login, please try again";
-//		  
-//		  Assert.assertEquals(actualResult, expectedResult);
-//	}
-//	
-	
+	@Test(priority = 3)
+public void failedLogin() throws Exception {
+		objLogin = new loginPage(driver);
+		objService = new serviceFactory(driver);
+		
+		ExcelUtils.setExcelFile(FILEPATH, SHEET);
+		ExcelUtils.setrowcolumn(ROW, COL);
+		
+		objService.waitForElementToClickable(objLogin.getLoginLink());
+		objLogin.loginLinkClick();
+		
+		for(int i = 3;i < ExcelUtils.getrow();i++) {
+			
+			username = ExcelUtils.getCellData(i, USERNAME_COL);
+			password = ExcelUtils.getCellData(i, PASSWORD_COL);
+			
+			objService.waitForElementToClickable(objLogin.getLoginBtn());
+			
+			objLogin.login(username, password);
+			
+			Thread.sleep(2000);
+			
+			objService.waitForElementToClickable(objLogin.getLoginBtn());
+			
+			Assert.assertEquals(objLogin.getLoginFailedMsg(), ExcelUtils.getCellData(i, EXPECTED_COL));
+			
+			driver.navigate().refresh();
+			
+		}
+	}
 }
