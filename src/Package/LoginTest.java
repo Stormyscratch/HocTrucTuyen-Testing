@@ -7,6 +7,13 @@ import org.testng.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+<<<<<<< HEAD:src/Package/LoginTest.java
+=======
+
+
+
+
+>>>>>>> parent of 6e4c0a6... Update 19.11.29:src/Package/LoginTest.java
 
 public class LoginTest {	
 	WebDriver driver;
