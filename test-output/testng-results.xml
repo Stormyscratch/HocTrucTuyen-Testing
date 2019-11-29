@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27199" started-at="2019-11-29T16:16:24 ICT" finished-at="2019-11-29T16:16:52 ICT">
+  <suite name="Default suite" duration-ms="19085" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:44 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27199" started-at="2019-11-29T16:16:24 ICT" finished-at="2019-11-29T16:16:52 ICT">
-      <class name="test.DownloadTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:test.DownloadTest@5ae63ade]" name="init" is-config="true" duration-ms="7454" started-at="2019-11-29T16:16:17 ICT" finished-at="2019-11-29T16:16:24 ICT">
+    <test name="Default test" duration-ms="19085" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:44 ICT">
+      <class name="test.LoginTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:test.LoginTest@627551fb]" name="init" is-config="true" duration-ms="8843" started-at="2019-11-29T19:30:25 ICT" finished-at="2019-11-29T19:30:34 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="downloadTest()[pri:0, instance:test.DownloadTest@5ae63ade]" name="downloadTest" duration-ms="23032" started-at="2019-11-29T16:16:24 ICT" finished-at="2019-11-29T16:16:47 ICT">
+        <test-method status="PASS" signature="login()[pri:1, instance:test.LoginTest@627551fb]" name="login" duration-ms="6448" started-at="2019-11-29T19:30:34 ICT" finished-at="2019-11-29T19:30:41 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- downloadTest -->
-        <test-method status="PASS" signature="driverQuite()[pri:0, instance:test.DownloadTest@5ae63ade]" name="driverQuite" is-config="true" duration-ms="4133" started-at="2019-11-29T16:16:47 ICT" finished-at="2019-11-29T16:16:52 ICT">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.LoginTest@627551fb]" name="quit" is-config="true" duration-ms="3752" started-at="2019-11-29T19:30:41 ICT" finished-at="2019-11-29T19:30:44 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- driverQuite -->
-      </class> <!-- test.DownloadTest -->
+        </test-method> <!-- quit -->
+      </class> <!-- test.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
