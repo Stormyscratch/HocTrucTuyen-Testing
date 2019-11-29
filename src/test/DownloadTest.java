@@ -71,10 +71,15 @@ import org.testng.annotations.BeforeSuite;
 		     String fileName = getLatestFile.getName();
 		     Assert.assertTrue(fileName.equals("Setting up Wget.docx"),
 		    		 "Downloaded file name is not matching with expected file name");
-		  
 	  }
 	  @AfterClass
 	  public void driverQuite() {
+		  File dir = new File(downloadPath);
+		  File[] dir_contents = dir.listFiles();
+		  for (int i = 0; i < dir_contents.length; i++) {
+		        if (dir_contents[i].getName().equals("Setting up Wget.docx"))
+		            dir_contents[i].delete();
+		            }
 		  driver.quit();
 	  }
 	  
