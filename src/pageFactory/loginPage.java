@@ -47,11 +47,35 @@ public class loginPage {
 	public WebElement getLoginStatus() {
 		return this.loginStatus;
 	}
-	public WebElement get() {
-		return this.loginLink;
+	public String getLoginFailedMsg() {
+		return this.loginfailedMsg.getText();
 	}
-	public WebElement get() {
-		return this.loginLink;
+		
+	//Clicking
+	public void loginClick() {
+		this.loginBtn.click();
+	}
+	public void logoutClick() {
+		this.logoutBtn.click();
+	}
+	public void loginLinkClick() {
+		this.loginLink.click();
 	}
 	
+	//Set value
+	public void setUsername(String Username) {
+		username.clear();
+		this.username.sendKeys(Username);
+	}
+	public void setPassword(String Password) {
+		password.clear();
+		this.password.sendKeys(Password);
+	}
+	
+	//Function
+	public void login(String Username, String Password) {
+		this.setUsername(Username);
+		this.setPassword(Password);
+		this.loginBtn.click();
+	}
 }

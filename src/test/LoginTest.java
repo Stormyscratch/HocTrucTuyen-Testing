@@ -4,11 +4,14 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import factory.base;
+import pageFactory.loginPage;
 
 import org.testng.Assert;
 import org.openqa.selenium.By;
 
-public class LoginTest extends base {	
+public class LoginTest extends base {
+	
+	loginPage objLogin;
 	
 	@Test(priority = 2)
   public void login() {
