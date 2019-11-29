@@ -1,4 +1,4 @@
-package Package;
+package test;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -40,7 +40,7 @@ public class LoginTest {
 	  driver.findElement(By.xpath("//input[@id='loginbtn']")).click();
 	  
 	  String actualResult = driver.findElement(By.xpath("//a[@title='View profile']")).getText();
-	  String expectedResult = "T177225 - NGUYỄN VĨNH TRÍ - K23T01";
+	  String expectedResult = "T177225 - NGUYỄN VĨNH TR�? - K23T01";
 	  Assert.assertEquals(actualResult, expectedResult);
 	  
 	  driver.findElement(By.xpath("//a[text()='Log out']")).click();
