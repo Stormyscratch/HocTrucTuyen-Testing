@@ -8,10 +8,6 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-
-
-
-
 public class LoginTest {	
 	WebDriver driver;
 	String baseURL = "https://hoctructuyen.vanlanguni.edu.vn";
