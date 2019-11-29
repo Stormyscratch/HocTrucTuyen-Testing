@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8408" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:52 ICT">
+  <suite name="Default suite" duration-ms="23128" started-at="2019-11-28T14:32:42 ICT" finished-at="2019-11-28T14:33:05 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8408" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:52 ICT">
+    <test name="Default test" duration-ms="23128" started-at="2019-11-28T14:32:42 ICT" finished-at="2019-11-28T14:33:05 ICT">
       <class name="Package.UploadTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:Package.UploadTest@18eed359]" name="init" is-config="true" duration-ms="9413" started-at="2019-11-21T16:09:34 ICT" finished-at="2019-11-21T16:09:44 ICT">
+        <test-method status="PASS" signature="init()[pri:0, instance:Package.UploadTest@18eed359]" name="init" is-config="true" duration-ms="7665" started-at="2019-11-28T14:32:34 ICT" finished-at="2019-11-28T14:32:42 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="login()[pri:0, instance:Package.UploadTest@18eed359]" name="login" is-config="true" duration-ms="3042" started-at="2019-11-21T16:09:44 ICT" finished-at="2019-11-21T16:09:47 ICT">
+        <test-method status="PASS" signature="login()[pri:0, instance:Package.UploadTest@18eed359]" name="login" is-config="true" duration-ms="2518" started-at="2019-11-28T14:32:42 ICT" finished-at="2019-11-28T14:32:44 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="uploading()[pri:0, instance:Package.UploadTest@18eed359]" name="uploading" duration-ms="5331" started-at="2019-11-21T16:09:47 ICT" finished-at="2019-11-21T16:09:52 ICT">
+        <test-method status="PASS" signature="uploading()[pri:0, instance:Package.UploadTest@18eed359]" name="uploading" duration-ms="20574" started-at="2019-11-28T14:32:44 ICT" finished-at="2019-11-28T14:33:05 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- uploading -->
-        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Package.UploadTest@18eed359]" name="driverQuit" is-config="true" duration-ms="4383" started-at="2019-11-21T16:09:52 ICT" finished-at="2019-11-21T16:09:57 ICT">
+        <test-method status="PASS" signature="driverQuit()[pri:0, instance:Package.UploadTest@18eed359]" name="driverQuit" is-config="true" duration-ms="3759" started-at="2019-11-28T14:33:05 ICT" finished-at="2019-11-28T14:33:09 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
