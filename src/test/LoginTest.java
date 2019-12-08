@@ -1,19 +1,11 @@
 package test;
 
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
-
 import factory.ExcelUtils;
 import factory.base;
 import factory.serviceFactory;
 import pageFactory.loginPage;
-
 import org.testng.Assert;
-
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class LoginTest extends base {
 	
@@ -31,8 +23,8 @@ public class LoginTest extends base {
 	public final int SUCCESS_DATA_ROW=2;
 	
 	//POM related
-	loginPage objLogin;
-	serviceFactory objService;
+	public loginPage objLogin;
+	public serviceFactory objService;
 	
 	//URL
 	public final String homeURL = "https://hoctructuyen.vanlanguni.edu.vn";
@@ -42,12 +34,15 @@ public class LoginTest extends base {
 	public String username;
 	public String password;
 	
-	@Test(priority = 2)
-  public void login() throws Exception {
-		//POM applied
+	public void creatingPOM() {
 		objLogin = new loginPage(driver);
 		objService = new serviceFactory(driver);
+	}
+	
+	@Test(priority = 2)
+  public void login() throws Exception {
 		
+		creatingPOM();
 		ExcelUtils.setExcelFile(FILEPATH, SHEET);
 		ExcelUtils.setrowcolumn(ROW, COL);
 		
@@ -69,8 +64,7 @@ public class LoginTest extends base {
 	
 	@Test(priority = 1)
 public void guestLogin() throws Exception {
-		objLogin = new loginPage(driver);
-		objService = new serviceFactory(driver);
+		creatingPOM();
 				
 		objService.waitForElementToClickable(objLogin.getLoginLink());
 		objLogin.loginLinkClick();
@@ -84,8 +78,7 @@ public void guestLogin() throws Exception {
 	
 	@Test(priority = 3)
 public void failedLogin() throws Exception {
-		objLogin = new loginPage(driver);
-		objService = new serviceFactory(driver);
+		creatingPOM();
 		
 		ExcelUtils.setExcelFile(FILEPATH, SHEET);
 		ExcelUtils.setrowcolumn(ROW, COL);
@@ -94,6 +87,8 @@ public void failedLogin() throws Exception {
 		objLogin.loginLinkClick();
 		
 		for(int i = 3;i < ExcelUtils.getrow();i++) {
+			
+			if(ExcelUtils.getCellData(i,2).equals("Unsuccessfully")) {
 			
 			username = ExcelUtils.getCellData(i, USERNAME_COL);
 			password = ExcelUtils.getCellData(i, PASSWORD_COL);
@@ -109,7 +104,8 @@ public void failedLogin() throws Exception {
 			Assert.assertEquals(objLogin.getLoginFailedMsg(), ExcelUtils.getCellData(i, EXPECTED_COL));
 			
 			driver.navigate().refresh();
-			
+
+			}
 		}
 	}
 }

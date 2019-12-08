@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31680" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:54 ICT">
+  <suite name="Default suite" duration-ms="29132" started-at="2019-12-08T11:51:11 ICT" finished-at="2019-12-08T11:51:40 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31680" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:54 ICT">
-      <class name="test.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:test.LoginTest@627551fb]" name="init" is-config="true" duration-ms="7703" started-at="2019-11-29T21:18:22 ICT" finished-at="2019-11-29T21:18:30 ICT">
+    <test name="Default test" duration-ms="29132" started-at="2019-12-08T11:51:11 ICT" finished-at="2019-12-08T11:51:40 ICT">
+      <class name="test.UploadTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:test.UploadTest@5c5a1b69]" name="init" is-config="true" duration-ms="8941" started-at="2019-12-08T11:51:11 ICT" finished-at="2019-12-08T11:51:20 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="failedLogin()[pri:3, instance:test.LoginTest@627551fb]" name="failedLogin" duration-ms="20799" started-at="2019-11-29T21:18:30 ICT" finished-at="2019-11-29T21:18:51 ICT">
+        <test-method status="PASS" signature="uploading()[pri:0, instance:test.UploadTest@5c5a1b69]" name="uploading" duration-ms="16363" started-at="2019-12-08T11:51:20 ICT" finished-at="2019-12-08T11:51:36 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- failedLogin -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:test.LoginTest@627551fb]" name="quit" is-config="true" duration-ms="3125" started-at="2019-11-29T21:18:51 ICT" finished-at="2019-11-29T21:18:54 ICT">
+        </test-method> <!-- uploading -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.UploadTest@5c5a1b69]" name="quit" is-config="true" duration-ms="3791" started-at="2019-12-08T11:51:36 ICT" finished-at="2019-12-08T11:51:40 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- test.LoginTest -->
+      </class> <!-- test.UploadTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
