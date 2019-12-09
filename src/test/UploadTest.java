@@ -38,29 +38,31 @@ public void autoLogin() {
   public void uploading() throws InterruptedException {
 	  creatingPOM();
 	  autoLogin();
-	  //Dashboard
-//	  Actions action = new Actions(driver);
-//	  action.moveToElement(element);
-//	  action.perform();
+	  //Hovering to the dashboard
 	  objUpload.hoverToElement(objUpload.getMyDashBoard());
-//	  objService.hoverToElement(objUpload.getMyDashBoard());
+	  
+	  //Click on Private Files
 	  objService.waitForElementPresented(objUpload.getPrivateFiles());
-//	  driver.findElement(By.xpath("//span[text()=' Private files']")).click();
 	  objUpload.privateFileClick();
+	  
+	  //Click on Add to add / upload new file
 	  objService.waitForElementToClickable(objUpload.getAdd());
-//	  driver.findElement(By.xpath("//div[@class='fp-toolbar']//a[@title='Add...']")).click();
 	  objUpload.addClick();
+	  
+	  //Input the path of the upload file and upload
 	  objService.waitForElementPresented(objUpload.getUploadInput());
-//	  driver.findElement(By.xpath("//input[@name='repo_upload_file']")).sendKeys("E:\\Testing.txt");
 	  objUpload.uploadInputSendText(input);
+	  
+	  //It's time Mr.Krab
 	  objService.waitForElementPresented(objUpload.getUploadBtn());
-//	  driver.findElement(By.xpath("//button[text()='Upload this file']")).click();
 	  objUpload.uploadBtnClick();
 	  
+	  //Commercial break
 	  Thread.sleep(10000);
-	  WebElement actualEle = driver.findElement(By.xpath("//div[text()='Testing.txt']"));
-	 
 	  
+	  
+	  //ASSert area
+	  WebElement actualEle = driver.findElement(By.xpath("//div[text()='Testing.txt']"));
 	  String expectedResult = "Testing.txt";
 	  String actualResult= actualEle.getText();
 	  Assert.assertEquals(actualResult, expectedResult);
