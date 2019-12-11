@@ -58,7 +58,8 @@ public void autoLogin() {
 	  objUpload.uploadBtnClick();
 	  
 	  //Commercial break
-	  Thread.sleep(10000);
+	  Thread.sleep(1000);
+//	  objService.waitForPageReload();
 	  
 	  
 	  //ASSert area
