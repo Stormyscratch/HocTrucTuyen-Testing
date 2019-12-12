@@ -1,6 +1,8 @@
 package factory;
 
 
+import java.io.File;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,12 +14,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class serviceFactory {
+import pageFactory.loginPage;
+
+public class serviceFactory{
 	WebDriver driver;
 	@CacheLookup
 	@FindBy(tagName = "html")
 	public WebElement _document;
 	public WebElement __document;
+	public loginPage objLogin = new loginPage(driver);
 
 	
 	public serviceFactory(WebDriver driver) {
@@ -35,20 +40,49 @@ public class serviceFactory {
 		wait.until(ExpectedConditions.elementToBeClickable(elements));
 	}
 	
-	public void waitForPageReload() {
-		ExpectedCondition<Boolean> expectation = new
-                ExpectedCondition<Boolean>() {
-                    public Boolean apply(WebDriver driver) {
-                        return ((JavascriptExecutor) driver).executeScript("return document.readyState").toString().equals("complete");
-                    }
-                };
-        try {
-            Thread.sleep(1000);
-            WebDriverWait wait = new WebDriverWait(driver, 100);
-            wait.until(expectation);
-        } 
-           catch (Throwable error) {
-              System.out.println("Took so long for page to reload");
-        }
+	
+	public File getLatestFilefromDir(String dirPath){
+	    File dir = new File(dirPath);
+	    File[] files = dir.listFiles();
+	    if (files == null || files.length == 0) {
+	        return null;
+	    }
+
+	    File lastModifiedFile = files[0];
+	    for (int i = 1; i < files.length; i++) {
+	       if (lastModifiedFile.lastModified() < files[i].lastModified()) {
+	           lastModifiedFile = files[i];
+	       }
+	    }
+	    return lastModifiedFile;
 	}
+	
+	public boolean isFileDownloaded_Exist(String dirPath, String ext){
+		 boolean flag=false;
+		    File dir = new File(dirPath);
+		    File[] files = dir.listFiles();
+		    if (files == null || files.length == 0) {
+		        flag = false;
+		    }
+
+		    for (int i = 1; i < files.length; i++) {
+		     if(files[i].getName().contains(ext)) {
+		      flag=true;
+		     }
+		    }
+		    return flag;
+		}
+	
+	public boolean isFileDownloaded(String downloadPath, String fileName) {
+		 boolean flag = false;
+		    File dir = new File(downloadPath);
+		    File[] dir_contents = dir.listFiles();
+
+		    for (int i = 0; i < dir_contents.length; i++) {
+		        if (dir_contents[i].getName().equals(fileName))
+		            return flag=true;
+		            }
+
+		    return flag;
+		}
 }

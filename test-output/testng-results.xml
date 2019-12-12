@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="121334" started-at="2019-12-09T15:26:23 ICT" finished-at="2019-12-09T15:28:25 ICT">
+  <suite name="Default suite" duration-ms="31509" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:47 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="121334" started-at="2019-12-09T15:26:23 ICT" finished-at="2019-12-09T15:28:25 ICT">
-      <class name="test.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:test.LoginTest@5c5a1b69]" name="init" is-config="true" duration-ms="15608" started-at="2019-12-09T15:26:23 ICT" finished-at="2019-12-09T15:26:39 ICT">
+    <test name="Default test" duration-ms="31509" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:47 ICT">
+      <class name="test.DownloadTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:test.DownloadTest@627551fb]" name="init" is-config="true" duration-ms="8718" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:24 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="guestLogin()[pri:1, instance:test.LoginTest@5c5a1b69]" name="guestLogin" duration-ms="3721" started-at="2019-12-09T15:26:39 ICT" finished-at="2019-12-09T15:26:43 ICT">
+        <test-method status="PASS" signature="downloadTest()[pri:0, instance:test.DownloadTest@627551fb]" name="downloadTest" duration-ms="18671" started-at="2019-12-12T13:56:24 ICT" finished-at="2019-12-12T13:56:42 ICT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- guestLogin -->
-        <test-method status="PASS" signature="login()[pri:2, instance:test.LoginTest@5c5a1b69]" name="login" duration-ms="6135" started-at="2019-12-09T15:26:43 ICT" finished-at="2019-12-09T15:26:49 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="failedLogin()[pri:3, instance:test.LoginTest@5c5a1b69]" name="failedLogin" duration-ms="93842" started-at="2019-12-09T15:26:49 ICT" finished-at="2019-12-09T15:28:23 ICT">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- failedLogin -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:test.LoginTest@5c5a1b69]" name="quit" is-config="true" duration-ms="1998" started-at="2019-12-09T15:28:23 ICT" finished-at="2019-12-09T15:28:25 ICT">
+        </test-method> <!-- downloadTest -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.DownloadTest@627551fb]" name="quit" is-config="true" duration-ms="4074" started-at="2019-12-12T13:56:42 ICT" finished-at="2019-12-12T13:56:47 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
-      </class> <!-- test.LoginTest -->
+      </class> <!-- test.DownloadTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
