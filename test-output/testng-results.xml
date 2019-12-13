@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="31509" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:47 ICT">
+  <suite name="Default suite" duration-ms="24499" started-at="2019-12-13T13:07:14 ICT" finished-at="2019-12-13T13:07:39 ICT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="31509" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:47 ICT">
+    <test name="Default test" duration-ms="24499" started-at="2019-12-13T13:07:14 ICT" finished-at="2019-12-13T13:07:39 ICT">
       <class name="test.DownloadTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:test.DownloadTest@627551fb]" name="init" is-config="true" duration-ms="8718" started-at="2019-12-12T13:56:15 ICT" finished-at="2019-12-12T13:56:24 ICT">
+        <test-method status="PASS" signature="init()[pri:0, instance:test.DownloadTest@5c5a1b69]" name="init" is-config="true" duration-ms="7024" started-at="2019-12-13T13:07:14 ICT" finished-at="2019-12-13T13:07:21 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="downloadTest()[pri:0, instance:test.DownloadTest@627551fb]" name="downloadTest" duration-ms="18671" started-at="2019-12-12T13:56:24 ICT" finished-at="2019-12-12T13:56:42 ICT">
+        <test-method status="PASS" signature="downloadTest()[pri:0, instance:test.DownloadTest@5c5a1b69]" name="downloadTest" duration-ms="13307" started-at="2019-12-13T13:07:21 ICT" finished-at="2019-12-13T13:07:34 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- downloadTest -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:test.DownloadTest@627551fb]" name="quit" is-config="true" duration-ms="4074" started-at="2019-12-12T13:56:42 ICT" finished-at="2019-12-12T13:56:47 ICT">
+        <test-method status="PASS" signature="quit()[pri:0, instance:test.DownloadTest@5c5a1b69]" name="quit" is-config="true" duration-ms="4134" started-at="2019-12-13T13:07:35 ICT" finished-at="2019-12-13T13:07:39 ICT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
