@@ -92,4 +92,8 @@ public class loginPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	public void clear() {
+		this.username.clear();
+		this.password.clear();
+	}
 }

@@ -15,7 +15,7 @@ public class LoginTest extends base {
 	
 	
 	//Rows and Collumns
-	public final int ROW = 8;
+	public final int ROW = 14;
 	public final int COL = 6;
   	public final int USERNAME_COL =3;
 	public final int PASSWORD_COL =4;
@@ -103,7 +103,7 @@ public void failedLogin() throws Exception {
 			
 			Assert.assertEquals(objLogin.getLoginFailedMsg(), ExcelUtils.getCellData(i, EXPECTED_COL));
 			
-			driver.navigate().refresh();
+			objLogin.clear();
 
 			}
 		}

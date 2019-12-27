@@ -9,7 +9,7 @@ import java.io.File;
 import org.testng.Assert;
 
   public class DownloadTest extends base {
-		public static String downloadPath = "C:\\Users\\Stormy-PC\\Downloads";
+		public static String downloadPath = "E:\\Eclipse-Projects\\HocTrucTuyen-Testing\\downloads";
 		public static String fileName = "Setting up Wget.docx";
 		
 		public String user = "t177225";
@@ -52,8 +52,8 @@ import org.testng.Assert;
 		  
 //		  Compare to latest file
 		  File getLatestFile = objService.getLatestFilefromDir(downloadPath);
-		     String fileName = getLatestFile.getName();
-		     Assert.assertTrue(fileName.equals(fileName),
+		     String nameFile = getLatestFile.getName();
+		     Assert.assertTrue(nameFile.equals(fileName),
 		    		 "Downloaded file name is not matching with expected file name");
 		     getLatestFile.deleteOnExit();
 	  }

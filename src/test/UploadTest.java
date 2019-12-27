@@ -16,7 +16,7 @@ public class UploadTest extends base {
 //Username and Password
 public String username = "t177225";
 public String password = "t177225";
-public String input = "E:\\Testing.txt";
+public String input = "E:\\Eclipse-Projects\\HocTrucTuyen-Testing\\uploads\\Testing.txt";
 	
 //POM
 public serviceFactory objService;

@@ -16,7 +16,7 @@ public class base {
   System.setProperty("webdriver.gecko.driver", "E:\\geckodriver-v0.25.0-win64\\geckodriver.exe");
   FirefoxProfile profile = new FirefoxProfile();
   profile.setPreference("browser.download.folderList",2);
-  profile.setPreference("browser.download.dir","C:\\Users\\Stormy-PC\\Downloads");
+  profile.setPreference("browser.download.dir","E:\\Eclipse-Projects\\HocTrucTuyen-Testing\\downloads");
   profile.setPreference("browser.download.manager.showWhenStarting",false);
   profile.setPreference("browser.helperApps.neverAsk.saveToDisk","application/vnd.openxmlformats-officedocument.wordprocessingml.document");
   FirefoxOptions options = new FirefoxOptions();
